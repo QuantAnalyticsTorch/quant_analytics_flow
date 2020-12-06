@@ -47,7 +47,7 @@ class UnivariateBrownianBridge():
         self.right_weight_t = tf.constant(tf.convert_to_tensor(self.right_weight))
         self.left_weight_t = tf.constant(tf.convert_to_tensor(self.left_weight))
 
-    @tf.function(jit_compile=True, input_signature=(tf.TensorSpec(shape=(None,None,None), dtype=tf.float64),
+    @tf.function(experimental_compile=True, input_signature=(tf.TensorSpec(shape=(None,None,None), dtype=tf.float64),
                                                 tf.TensorSpec(shape=(), dtype=tf.bool),
                                                 tf.TensorSpec(shape=(), dtype=tf.int32),
                                                 tf.TensorSpec(shape=(None), dtype=tf.int32),

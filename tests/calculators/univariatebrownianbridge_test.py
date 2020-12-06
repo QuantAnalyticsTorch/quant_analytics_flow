@@ -42,6 +42,7 @@ def test_brownian_path_increment():
     assert tf.abs(w[0][0][0]) < constants.EPSILON
     assert tf.abs(w[1][0][1] - tf.constant(9.53872552e-01, dtype=tf.float64)) < constants.EPSILON
 
+
 if __name__ == '__main__':
     
     test_brownian_path_increment()
