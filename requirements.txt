@@ -26,7 +26,7 @@ Jinja2==2.11.2
 Keras-Preprocessing==1.1.2
 Markdown==3.3.3
 MarkupSafe==1.1.1
-numpy==1.18.5
+numpy
 oauthlib==3.1.0
 opt-einsum==3.3.0
 packaging==20.7
@@ -56,14 +56,12 @@ sphinxcontrib-htmlhelp==1.0.3
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.4
-tb-nightly==2.5.0a20201204
+tb-nightly
 tensorboard==2.4.0
 tensorboard-plugin-wit==1.7.0
-tensorflow-cpu==2.3.1
-tensorflow-estimator==2.3.0
 termcolor==1.1.0
-tf-estimator-nightly==2.5.0.dev2020120401
-tf-nightly-cpu==2.5.0.dev20201204
+tf-estimator-nightly
+tf-nightly-cpu
 toml==0.10.2
 typing-extensions==3.7.4.3
 urllib3==1.26.2
