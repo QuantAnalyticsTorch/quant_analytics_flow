@@ -1,5 +1,7 @@
 # quant_analytics_flow
-Quantitative Analytics using Tensorflow and machine learning
+Quantitative Analytics using Tensorflow and machine learning. Full API documentation here
+
+https://quant-analytics-flow.readthedocs.io/
 
 
 # Install package
