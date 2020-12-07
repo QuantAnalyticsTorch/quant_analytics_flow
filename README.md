@@ -9,7 +9,7 @@ python setup.py bdist_wheel
 
 ## Run the tests
 
-pytest --cov-report term --cov=quant_torch tests/ --html=./test-reports/report.html --cov-report=html:./test-reports/coverage --profile
+pytest --cov-report term --cov=quant_analytics_flow tests/ --html=./test-reports/report.html --cov-report=html:./test-reports/coverage --profile
 
 ## Upload Python package
 
