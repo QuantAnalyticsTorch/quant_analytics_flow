@@ -8,5 +8,9 @@ quant_analytics_flow.egg-info/not-zip-safe
 quant_analytics_flow.egg-info/top_level.txt
 quant_analytics_flow/analytics/__init__.py
 quant_analytics_flow/analytics/constants.py
+quant_analytics_flow/analytics/matrixanalytics.py
+quant_analytics_flow/analytics/maxsoft.py
 quant_analytics_flow/analytics/norminv.py
 quant_analytics_flow/calculators/__init__.py
+quant_analytics_flow/calculators/multivariatebrownianbridge.py
+quant_analytics_flow/calculators/univariatebrownianbridge.py
