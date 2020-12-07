@@ -12,6 +12,9 @@ Welcome to Quant Analytics Flow's documentation!
 
    modules
 
+.. autosummary::
+   :toctree: _autosummary   
+
 Indices and tables
 ==================
 
