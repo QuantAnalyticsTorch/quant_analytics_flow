@@ -16,3 +16,7 @@ pytest --cov-report term --cov=quant_analytics_flow tests/ --html=./test-reports
 ## Upload Python package
 
 python -m twine upload dist/*
+
+# Sphinx
+
+sphinx-apidoc -o source/ ../quant_analytics_flow
