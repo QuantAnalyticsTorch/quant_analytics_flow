@@ -21,12 +21,21 @@ def hyperbolic(x):
 
       Returns:
           y (tensor(shape=(...))): Hyperbolic function
+
+      .. jupyter-execute::          
+
+          import matplotlib.pyplot as plt
+          import quant_analytics_flow.analytics.maxsoft as maxsoft
+          import tensorflow as tf
+          x = tf.cast(tf.linspace(-1.0,1.0,11), dtype=tf.float64)
+          y = maxsoft.hyperbolic(x)
+          plt.plot(x.numpy(),y.numpy())
           
       """
       
       return (x + tf.sqrt(1. + x*x))/2.
 
-def soft_max_hypterbolic(x,eps=constants.EPSILON):
+def soft_max_hyperbolic(x,eps=constants.EPSILON):
       """ Using the :ref:`hyperbolic function <target hyperbolic_function>` to approximate :math:`\max(x,0)`
     
       .. _target soft_max_hyperbolic:
@@ -41,6 +50,20 @@ def soft_max_hypterbolic(x,eps=constants.EPSILON):
 
       Returns:
           y (tensor(shape=(...))): Hyperbolic function
-          
+
+      .. jupyter-execute::          
+
+          import matplotlib.pyplot as plt
+          import quant_analytics_flow.analytics.maxsoft as maxsoft
+          import tensorflow as tf
+          x = tf.cast(tf.linspace(-1.0,1.0,21), dtype=tf.float64)
+          y = maxsoft.hyperbolic(x)
+          z = maxsoft.soft_max_hyperbolic(x)                  
+          w = maxsoft.soft_max_hyperbolic(x, tf.constant(0.1, dtype=tf.float64))          
+          plt.plot(x.numpy(),y.numpy())
+          plt.plot(x.numpy(),z.numpy())
+          plt.plot(x.numpy(),w.numpy())          
+
+
       """
       return hyperbolic(x/eps)*eps
