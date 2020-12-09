@@ -68,8 +68,8 @@ def soft_max_hyperbolic(x,eps=constants.EPSILON):
           g(x) = f(x/\\epsilon)\cdot \\epsilon
 
       Args:
-          x (tensor(shape=(...))): M-dimensional tensor
-          eps (float64): scaling parameter
+          x (tensor(shape=(...))): M-dimensional tensor.
+          eps (float64): scaling parameter.
 
       Returns:
           y (tensor(shape=(...))): Hyperbolic function

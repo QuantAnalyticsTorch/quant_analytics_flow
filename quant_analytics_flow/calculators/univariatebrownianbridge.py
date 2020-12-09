@@ -3,49 +3,63 @@ import numpy as np
 import math
 
 class UnivariateBrownianBridge():
+    """Univariate Brownian bridge implementation
+
+    Args:
+
+        number_time_steps (int): Number of equally spaced time steps
+
+    Attributes:
+        left_index_t (tensor(shape=(number_time_steps))): Left index for dimension :math:`n`
+        right_index_t (tensor(shape=(number_time_steps))): Right index for dimension :math:`n`
+        abc
+
+
+    """
+
     def __init__(self, number_time_steps):
         self.number_time_steps = number_time_steps
 
-        self.left_index = np.zeros(number_time_steps, dtype=int)
-        self.right_index = np.zeros(number_time_steps, dtype=int)
-        self.bridge_index = np.zeros(number_time_steps, dtype=int)
-        self.left_weight = np.zeros(number_time_steps)
-        self.right_weight = np.zeros(number_time_steps)
-        self.std_dev = np.zeros(number_time_steps)
+        left_index = np.zeros(number_time_steps, dtype=int)
+        right_index = np.zeros(number_time_steps, dtype=int)
+        bridge_index = np.zeros(number_time_steps, dtype=int)
+        left_weight = np.zeros(number_time_steps)
+        right_weight = np.zeros(number_time_steps)
+        std_dev = np.zeros(number_time_steps)
 
-        self._map = np.zeros(number_time_steps, dtype=int)
+        _map = np.zeros(number_time_steps, dtype=int)
 
-        self._map[-1] = 1
-        self.bridge_index[0] = number_time_steps - 1
-        self.std_dev[0] = math.sqrt(1.0 * number_time_steps)
-        self.left_weight[0] = 0
-        self.right_weight[0] = 0
+        _map[-1] = 1
+        bridge_index[0] = number_time_steps - 1
+        std_dev[0] = math.sqrt(1.0 * number_time_steps)
+        left_weight[0] = 0
+        right_weight[0] = 0
 
         j=0
         for i in range(1,number_time_steps):
-            while self._map[j] == True:
+            while _map[j] == True:
                 j = j + 1
             k = j
-            while self._map[k] == False:
+            while _map[k] == False:
                 k = k + 1
             l = j+((k-1-j)>>1)
-            self._map[l]=i
-            self.bridge_index[i]=l
-            self.left_index[i]=j
-            self.right_index[i]=k
-            self.left_weight[i]=(k-l)/(k+1-j)
-            self.right_weight[i]=(1+l-j)/(k+1-j)
-            self.std_dev[i]=np.sqrt(((1+l-j)*(k-l))/(k+1-j))
+            _map[l]=i
+            bridge_index[i]=l
+            left_index[i]=j
+            right_index[i]=k
+            left_weight[i]=(k-l)/(k+1-j)
+            right_weight[i]=(1+l-j)/(k+1-j)
+            std_dev[i]=np.sqrt(((1+l-j)*(k-l))/(k+1-j))
             j=k+1
             if j>=number_time_steps:
                 j=0
 
-        self.bridge_index_t = tf.constant(tf.convert_to_tensor(self.bridge_index,dtype=tf.int32))
-        self.right_index_t = tf.constant(tf.convert_to_tensor(self.right_index,dtype=tf.int32))
-        self.left_index_t = tf.constant(tf.convert_to_tensor(self.left_index,dtype=tf.int32))
-        self.std_dev_t = tf.constant(tf.convert_to_tensor(self.std_dev))
-        self.right_weight_t = tf.constant(tf.convert_to_tensor(self.right_weight))
-        self.left_weight_t = tf.constant(tf.convert_to_tensor(self.left_weight))
+        self.bridge_index_t = tf.constant(tf.convert_to_tensor(bridge_index,dtype=tf.int32))
+        self.right_index_t = tf.constant(tf.convert_to_tensor(right_index,dtype=tf.int32))
+        self.left_index_t = tf.constant(tf.convert_to_tensor(left_index,dtype=tf.int32))
+        self.std_dev_t = tf.constant(tf.convert_to_tensor(std_dev))
+        self.right_weight_t = tf.constant(tf.convert_to_tensor(right_weight))
+        self.left_weight_t = tf.constant(tf.convert_to_tensor(left_weight))
 
     @tf.function(experimental_compile=True, input_signature=(tf.TensorSpec(shape=(None,None,None), dtype=tf.float64),
                                                 tf.TensorSpec(shape=(), dtype=tf.bool),
