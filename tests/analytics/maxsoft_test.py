@@ -21,4 +21,4 @@ def test_soft_max_hyperbolic():
 
 if __name__ == '__main__':
     
-    test_max_if()
+    test_soft_max_hyperbolic()
