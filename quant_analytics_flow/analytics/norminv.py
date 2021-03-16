@@ -2,7 +2,7 @@ import tensorflow as tf
 
 SQRT_2 = tf.sqrt(tf.constant(2.,dtype=tf.float64))
 
-def norminv(x):
+def norminv(x : tf.Tensor) -> tf.Tensor:
     """ Using the inverse error function :math:`\\text{erfinv}(x)` computes the inverse normal function
     
     .. _target norminv:
@@ -12,10 +12,10 @@ def norminv(x):
         \\text{norminv}(x) = \sqrt{2} \cdot \\text{erfinv}\\left( 2x - 1 \\right)
 
     Args:
-        x (tensor(shape=(...))): M-dimensional tensor
+        x (tf.Tensor): M-dimensional tensor
 
     Returns:
-        y (tensor(shape=(...))): Hyperbolic function
+        y (tf.Tensor): Inverse cumulative normal distribution function
 
     .. jupyter-execute::          
 

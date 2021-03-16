@@ -1,7 +1,7 @@
 import tensorflow as tf
 from quant_analytics_flow.analytics import constants
 
-def hyperbolic(x):
+def hyperbolic(x : tf.Tensor) -> tf.Tensor:
       """ Using the hyperbolic function 
     
       .. _target hyperbolic:
@@ -11,10 +11,10 @@ def hyperbolic(x):
         f(x) = \\frac{1}{2} \\left(x + \sqrt{1 + x^2} \\right)
 
       Args:
-          x (tensor(shape=(...))): M-dimensional tensor
+          x (tf.Tensor): M-dimensional tensor
 
       Returns:
-          y (tensor(shape=(...))): Hyperbolic function
+          y (tf.Tensor): Hyperbolic function
 
       .. jupyter-execute::          
 
@@ -29,7 +29,7 @@ def hyperbolic(x):
       
       return (x + tf.sqrt(1. + x*x))/2.
 
-def hyperbolic_prime(x):
+def hyperbolic_prime(x : tf.Tensor) -> tf.Tensor:
       """ Using the derivative of the :ref:`hyperbolic function <target hyperbolic>`
     
       .. _target hyperbolic_prime:
@@ -39,10 +39,10 @@ def hyperbolic_prime(x):
         f(x) = \\frac{1}{2}\\left(1 + \\frac{x}{\sqrt{1 + x^2}} \\right)
 
       Args:
-          x (tensor(shape=(...))): M-dimensional tensor
+          x (tf.Tensor): M-dimensional tensor
 
       Returns:
-          y (tensor(shape=(...))): Hyperbolic function
+          y (tf.Tensor): Derivative of hyperbolic function
 
       .. jupyter-execute::          
 
@@ -72,7 +72,7 @@ def soft_max_hyperbolic(x,eps=constants.EPSILON):
           eps (float64): scaling parameter.
 
       Returns:
-          y (tensor(shape=(...))): Hyperbolic function
+          y (tensor(shape=(...))): Scaled hyperbolic function
 
       .. jupyter-execute::          
 
@@ -105,7 +105,7 @@ def soft_heavy_side_hyperbolic(x,eps=constants.EPSILON):
           eps (float64): scaling parameter
 
       Returns:
-          y (tensor(shape=(...))): Hyperbolic function
+          y (tensor(shape=(...))): Scaled derivative of hyperbolic function
 
       .. jupyter-execute::          
 

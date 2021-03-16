@@ -6,6 +6,14 @@ from quant_analytics_flow.calculators.univariatebrownianbridge import Univariate
 
 
 class MultivariateBrownianBridge():
+    """Multivariate brownian bridge
+
+    Args:
+
+        fowardCovarianceMatrices (tensor(shape=(N,M,M))): number of time steps N, number of states M
+
+    """
+    
     def __init__(self, forwardCovarianceMatrices):
         self.forwardCovarianceMatrices = forwardCovarianceMatrices
         self.numberTimeSteps = len(forwardCovarianceMatrices)
