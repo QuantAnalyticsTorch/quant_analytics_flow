@@ -1,4 +1,6 @@
 import math
+import tensorflow as tf
+
 
 def test(A):
     """ Square root of positive semi-definite matrix
@@ -15,5 +17,4 @@ def test(A):
         Q (tensor(shape=(N,N))): Returns square root :math:`Q`
 
     """
-    w, v = tf.linalg.eigh(A)
-    return tf.matmul(tf.matmul(v, tf.linalg.diag(tf.sqrt(w))),v)
+    return 0.0
