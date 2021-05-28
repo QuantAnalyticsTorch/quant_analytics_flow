@@ -12,7 +12,6 @@ class UnivariateBrownianBridge():
     Attributes:
         left_index_t (tensor(shape=(number_time_steps))): Left index for dimension :math:`n`
         right_index_t (tensor(shape=(number_time_steps))): Right index for dimension :math:`n`
-        abc
 
 
     """
