@@ -7,6 +7,8 @@ quant_analytics_flow.egg-info/dependency_links.txt
 quant_analytics_flow.egg-info/not-zip-safe
 quant_analytics_flow.egg-info/top_level.txt
 quant_analytics_flow/analytics/__init__.py
+quant_analytics_flow/analytics/blackanalytics.py
+quant_analytics_flow/analytics/characteristicfunctions.py
 quant_analytics_flow/analytics/constants.py
 quant_analytics_flow/analytics/matrixanalytics.py
 quant_analytics_flow/analytics/maxsoft.py
