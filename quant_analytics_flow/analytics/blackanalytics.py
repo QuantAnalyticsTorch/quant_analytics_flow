@@ -1,8 +1,11 @@
 #import torch
 import numpy as np
 from scipy.stats import norm
+import tensorflow as tf
+import tensorflow_probability as tfp
+tfd = tfp.distributions
 
-def black(s, k, dt, v, r=0.0):
+def black(s : float, k : float, dt : float, v : float, r=0.0):
     std = v * np.sqrt(dt);
     d1 = np.log(s / k) / std + 0.5 * std;
     return s * norm.cdf(d1) - k * norm.cdf(d1 - std);
@@ -29,3 +32,11 @@ def impliedvolatility(p, s, k, dt, feps = 1e-8, veps = 1e-8):
         pt = black(s, k, dt, v)
 
     return v
+
+@tf.function(experimental_compile=True)
+def black_tf(s : tf.Tensor, k : tf.Tensor, dt : tf.Tensor, v : tf.Tensor, r : tf.Tensor):
+    n = tfd.Normal(loc=0., scale=1.)
+    sdt = v * tf.sqrt(dt)
+    d1 = (tf.math.log(s / k) + (r + v * v / 2) * dt) / sdt
+    d2 = d1 - sdt
+    return s * n.cdf(d1) - k * n.cdf(d2)

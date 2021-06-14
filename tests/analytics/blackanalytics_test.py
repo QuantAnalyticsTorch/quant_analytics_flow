@@ -32,6 +32,23 @@ def test_implied_black():
 
     assert tf.abs(iv - vol)  < constants.EPSILON
 
+def test_black_tf():
+    
+    forward = tf.Variable(100.0)
+    strike = tf.Variable(100.0)    
+    vol = tf.Variable(0.2)        
+    time = tf.Variable(1.0)        
+    r = tf.constant(0.0)                
+
+    with tf.GradientTape() as tape:
+        bsn = blackanalytics.black_tf(forward, strike, time, vol, r)
+
+    dblack_df = tape.gradient(bsn, [forward,strike,vol])
+
+    print(bsn.numpy())
+    print(dblack_df)
+
+
 if __name__ == '__main__':
     
-    test_black()
+    test_black_tf()
