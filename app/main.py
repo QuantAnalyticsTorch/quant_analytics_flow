@@ -4,18 +4,22 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import numpy as np
 import tensorflow as tf
-
-app = FastAPI()
-
-import numpy as np
 from scipy.stats import norm
 
 from quant_analytics_flow.analytics import blackanalytics
+
+app = FastAPI()
 
 @app.get("/analytics/blackscholes")
 def blackscholes(fwd: float, strike: float, volatility: float, tau: float):
     z = blackanalytics.black(fwd, strike, tau, volatility)
     return { "price" : float(z) }
+
+@app.get("/analytics/sum_numbers")
+def sum_numbers(x: float, y : float):
+    return { "price" : float(x + y) }
+
+
 
 @app.get("/analytics/impliedvolatility")
 def impliedvolatility(price: float, fwd: float, strike: float, tau: float):

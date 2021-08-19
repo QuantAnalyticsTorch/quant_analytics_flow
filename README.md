@@ -24,3 +24,6 @@ sphinx-apidoc -o source/ ../quant_analytics_flow
 # Docker
 docker build -t quant_analytics_flow_image .
 docker run -d --name quant_analytics_flow_container -p 80:80 quant_analytics_flow_image
+
+# FastAPI
+uvicorn main:app --reload

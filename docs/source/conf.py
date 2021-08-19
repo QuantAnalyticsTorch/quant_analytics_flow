@@ -70,3 +70,10 @@ nbsphinx_execute_arguments = [
     "--InlineBackend.figure_formats={'svg', 'pdf'}",
     "--InlineBackend.rc={'figure.dpi': 96}",
 ]
+
+comments_config = {
+   "utterances": {
+      "repo": "QuantAnalyticsTorch/quant_analytics_flow",
+      "optional": "config",
+   }
+}
