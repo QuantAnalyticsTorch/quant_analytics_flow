@@ -30,7 +30,7 @@ def hyperbolic(x : tf.Tensor) -> tf.Tensor:
       return (x + tf.sqrt(1. + x*x))/2.
 
 def hyperbolic_prime(x : tf.Tensor) -> tf.Tensor:
-      """ Using the derivative of the :ref:`hyperbolic function <target hyperbolic>`
+      """ Using the derivative of the :hoverxref:`hyperbolic function <target hyperbolic>`
     
       .. _target hyperbolic_prime:
 

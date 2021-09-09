@@ -20,6 +20,7 @@ python -m twine upload dist/*
 # Sphinx
 
 sphinx-apidoc -o source/ ../quant_analytics_flow
+python -m http.server --directory docs/build 9000
 
 # Docker
 docker build -t quant_analytics_flow_image .
