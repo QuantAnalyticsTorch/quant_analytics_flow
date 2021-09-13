@@ -100,7 +100,7 @@ sphinxcontrib-devhelp==1.0.2
 sphinxcontrib-htmlhelp
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.3
-sphinxcontrib-serializinghtml==1.1.4
+sphinxcontrib-serializinghtml
 sphinx-design==0.0.12
 sphinx-hoverxref==0.7b1
 tensorboard==2.4.0
