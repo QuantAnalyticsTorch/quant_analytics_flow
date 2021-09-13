@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.abspath('..'))
 # -- Project information -----------------------------------------------------
 
 project = 'Quant Analytics Flow'
-copyright = '2020, Quant Analyst'
+copyright = '2021, Quant Analyst'
 author = 'Quant Analyst'
 
 # The full version, including alpha/beta/rc tags
@@ -30,7 +30,7 @@ release = '0.0.1'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.autosummary', 'sphinx.ext.viewcode', 'sphinx.ext.mathjax', 'nbsphinx', 'jupyter_sphinx', 'sphinx.ext.napoleon','hoverxref.extension'
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.autosummary', 'sphinx.ext.viewcode', 'nbsphinx', 'jupyter_sphinx', 'sphinx.ext.napoleon','hoverxref.extension',"sphinx_design"
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -47,7 +47,7 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'furo'
 
 master_doc= "index"
 

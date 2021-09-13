@@ -1,3 +1,5 @@
+.. _flow.analytics:
+
 quant\_analytics\_flow.analytics package
 ========================================
 

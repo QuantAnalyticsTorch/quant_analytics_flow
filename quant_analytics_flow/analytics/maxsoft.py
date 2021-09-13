@@ -2,7 +2,7 @@ import tensorflow as tf
 from quant_analytics_flow.analytics import constants
 
 def hyperbolic(x : tf.Tensor) -> tf.Tensor:
-      """ Using the hyperbolic function 
+      """ Using the hyperbolic function
     
       .. _target hyperbolic:
 

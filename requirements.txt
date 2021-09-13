@@ -20,6 +20,7 @@ defusedxml==0.6.0
 docutils==0.16
 entrypoints==0.3
 flatbuffers==1.12
+furo==2021.9.8
 gast==0.3.3
 google-auth==1.23.0
 google-auth-oauthlib==0.4.2
@@ -100,6 +101,7 @@ sphinxcontrib-htmlhelp==1.0.3
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.4
+sphinx-design==0.0.12
 sphinx-hoverxref==0.7b1
 tensorboard==2.4.0
 tensorboard-plugin-wit==1.7.0
