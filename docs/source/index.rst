@@ -14,10 +14,11 @@ Welcome to Quant Analytics Flow's documentation!
    :hidden:
 
    getting_started
+   user_guide
    modules
 
 
-This is the introduction to Quant Analytics Flow. User are recommended to read the :hoverxref:`getting started <getting_started>`
+This is the introduction to Quant Analytics Flow. User are recommended to read the :hoverxref:`getting started <getting_started>`. Further ideas here
 
 .. grid:: 2
     :margin: 5 5 0 0
@@ -29,7 +30,13 @@ This is the introduction to Quant Analytics Flow. User are recommended to read t
 
         First step with Quant Analytics Torch
 
-    .. grid-item-card:: :octicon:`rocket;1.5em` API Reference
+    .. grid-item-card:: :octicon:`light-bulb;1.5em` User guide
+        :link: user_guide
+        :link-type: doc
+
+        First step with Quant Analytics Torch
+
+    .. grid-item-card:: :octicon:`file-code;1.5em` API Reference
         :link: modules
         :link-type: doc
 
