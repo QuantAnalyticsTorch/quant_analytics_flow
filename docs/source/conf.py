@@ -77,3 +77,7 @@ comments_config = {
       "optional": "config",
    }
 }
+
+hoverxref_project = 'quant-analytics-flow'
+hoverxref_version = 'latest'
+hoverxref_api_host = 'https://readthedocs.org'

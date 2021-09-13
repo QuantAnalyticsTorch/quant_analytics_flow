@@ -1,23 +1,36 @@
+.. _index_label:
+
 .. Quant Analytics Flow documentation master file, created by
    sphinx-quickstart on Mon Dec  7 20:22:22 2020.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
 Welcome to Quant Analytics Flow's documentation!
-================================================
+========================================================================================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+   :hidden:
 
+   getting_started
    modules
 
-.. autosummary::
-   :toctree: _autosummary   
 
-Indices and tables
-==================
+This is the introduction to Quant Analytics Flow. User are recommended to read the :hoverxref:`getting started <getting_started>`
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. grid:: 2
+    :margin: 5 5 0 0
+    :gutter: 4
+
+    .. grid-item-card:: :octicon:`rocket;1.5em` Getting Started
+        :link: getting_started
+        :link-type: doc
+
+        First step with Quant Analytics Torch
+
+    .. grid-item-card:: :octicon:`rocket;1.5em` API Reference
+        :link: modules
+        :link-type: doc
+
+        In depth API reference
