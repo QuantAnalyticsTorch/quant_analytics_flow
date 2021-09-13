@@ -1,4 +1,4 @@
-quant_analytics_flow
+Quant Analytics Flow
 ====================
 
 .. toctree::
