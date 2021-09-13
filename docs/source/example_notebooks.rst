@@ -13,16 +13,4 @@ Example notebooks
    :caption: Contents:
    :hidden:
 
-   examples/RatingTransitions
-
 Example notebooks
-
-.. grid:: 2
-    :margin: 5 5 0 0
-    :gutter: 4
-
-    .. grid-item-card:: :octicon:`rocket;1.5em` Rating transition
-        :link: examples/RatingTransitions
-        :link-type: doc
-
-        Rating transition example
